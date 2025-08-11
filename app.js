@@ -19,8 +19,12 @@ for (let i=0; i<5; i++) {
 
 function submitEvent(event) {
 event.preventDefault()
-document.querySelector('.rating').classList.add('hide')
-document.querySelector('.feedback').classList.remove('hide')
+ratingArray.forEach(label => {
+  if (label.querySelector('span').classList.contains('ratingActive')) {
+    document.querySelector('.rating').classList.add('hide')
+  document.querySelector('.feedback').classList.remove('hide')
+  }
+}) 
 }
 
 document.querySelector('button').addEventListener('click', submitEvent)
